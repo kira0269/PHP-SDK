@@ -125,7 +125,7 @@ class JamSdk
      * @param string $size
      * @return string
      */
-    private function generateButtonUrl(string $lang, string $size): string
+    public function generateButtonUrl(string $lang, string $size): string
     {
         $lang = in_array($lang, self::ACCEPT_LANGUAGES) ? $lang : self::DEFAULT_LANGUAGE;
         $size = in_array($size, self::ACCEPT_SIZES) ? $size : self::DEFAULT_SIZE;
@@ -140,7 +140,7 @@ class JamSdk
      * @param string $size
      * @return string
      */
-    public function generateDefaultButtonHtml(string $lang = 'en', string $size = 'x2'): string
+    public function generateDefaultButtonHtml(string $lang = self::DEFAULT_LANGUAGE, string $size = self::DEFAULT_SIZE): string
     {
         return '<div style="margin: 20px 0; width: ' . self::BUTTON_WIDTH . 'px;">' .
             '<a href="' . $this->generateLoginUrl() . '">' .
